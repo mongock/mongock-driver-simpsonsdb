@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>mongock-driver-simpsonsdb</artifactId>
+    <groupId>io.mongock</groupId>
+    <version>5.0.34-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>mongock-driver-simpsonsdb-bom</artifactId>
+
+  <name>Mongock SimpsonsDB BOM</name>
+  <description>Mongock for SimpsonsDB dependency management</description>
+  <packaging>pom</packaging>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.mongock</groupId>
+        <artifactId>simpsonsdb-driver</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+
+      <!-- MONGOCK CORE-->
+      <dependency>
+        <groupId>io.mongock</groupId>
+        <artifactId>mongock-core-bom</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+</project>
