@@ -3,7 +3,10 @@ package io.mongock.driver.simpsonsdb.driver;
 
 import com.simpsonsdb.SimpsonsDBClient;
 
-
+/**
+ * This is the class it will be used to instanstiate the driver.
+ * You can see an example in the simpsonsdb-springboot-driver, class SpringbootSimpsonsDBContext
+ */
 public class SimpsonsDBDriver extends SimpsonsDBDriverBase {
 
   protected SimpsonsDBDriver(SimpsonsDBClient client,
