@@ -19,6 +19,7 @@
     <module>mongock-driver-simpsonsdb-bom</module>
     <module>simpsonsdb-driver</module>
     <module>simpsonsDB</module>
+    <module>simpsonsdb-springboot-driver</module>
   </modules>
 
 
@@ -31,5 +32,6 @@
     <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
 
   </properties>
+
 
 </project>

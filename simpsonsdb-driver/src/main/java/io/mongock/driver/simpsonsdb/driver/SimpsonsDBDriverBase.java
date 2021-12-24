@@ -14,6 +14,9 @@ public abstract class SimpsonsDBDriverBase extends NonTransactionalConnectionDri
   protected SimpsonsDBChangeEntryRepository changeEntryRepository;
   protected SimpsonsDBLockRepository lockRepository;
 
+  //Custom fields
+  private String configParameter;
+
   /**
    * This is just an example. It's very likely that something like database engine client will be required in the constructor,
    * but it may be different or require other parameters.
@@ -55,6 +58,11 @@ public abstract class SimpsonsDBDriverBase extends NonTransactionalConnectionDri
   }
 
 
+  public String getConfigParameter() {
+    return configParameter;
+  }
 
-
+  public void setConfigParameter(String configParameter) {
+    this.configParameter = configParameter;
+  }
 }

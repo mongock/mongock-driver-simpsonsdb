@@ -19,6 +19,11 @@
         <artifactId>simpsonsdb-driver</artifactId>
         <version>${project.version}</version>
       </dependency>
+      <dependency>
+        <groupId>io.mongock</groupId>
+        <artifactId>simpsonsdb-springboot-driver</artifactId>
+        <version>${project.version}</version>
+      </dependency>
 
 
       <!-- MONGOCK CORE-->
