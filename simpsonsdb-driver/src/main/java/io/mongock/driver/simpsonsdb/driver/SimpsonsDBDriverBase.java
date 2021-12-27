@@ -58,6 +58,7 @@ public abstract class SimpsonsDBDriverBase extends NonTransactionalConnectionDri
   }
 
 
+  //Custom parameters, specific to this driver
   public String getConfigParameter() {
     return configParameter;
   }
