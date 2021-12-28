@@ -24,16 +24,6 @@
         <artifactId>simpsonsdb-springboot-driver</artifactId>
         <version>${project.version}</version>
       </dependency>
-
-
-      <!-- MONGOCK CORE-->
-      <dependency>
-        <groupId>io.mongock</groupId>
-        <artifactId>mongock-core-bom</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 

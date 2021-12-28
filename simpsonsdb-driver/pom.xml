@@ -18,18 +18,6 @@
     <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
   </properties>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>io.mongock</groupId>
-        <artifactId>mongock-core-bom</artifactId>
-        <version>${project.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
   <dependencies>
     <!-- CORE DEPENDENCIES -->
     <dependency>
