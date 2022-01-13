@@ -35,7 +35,14 @@ public class SimpsonsDBLockRepository extends SimpsonsDBRepositoryBase implement
   }
 
   /**
-   * If there is a lock in the database with the same key and owner, updates it.Otherwise, throws a LockPersistenceException
+   * The only goal of this method is to update(mainly to extend the expiry date) the lock in case is already owned.
+   * So it requires a Lock for the same key and owner (existingLock.key==newLock.key && existingLoc.owner==newLock.owner).
+   * If there is no lock for the key or it doesn't belong to newLock.owner, a LockPersistenceException is thrown.
+   * Take into account that if it's already expired, but still with the same owner, we are lucky, no one has taken it yet,
+   * so we can still extend the expiration time.
+   *
+   * But it MUST NOT update a non owned lock, so it's highly recommended to check the condition and the write in the same
+   * operation or atomically.
    *
    * @param newLock lock to replace the existing one.
    * @throws LockPersistenceException if there is no lock in the database with the same key and owner or cannot update
