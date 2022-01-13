@@ -8,18 +8,18 @@ Let's crack...
 
 ## 1. Get assigned to develop the driver
 If you have decided to develop a new driver, you either took a ticket published by the Mongock team or you need a driver
-and want to crate it yourself.
+and want to create it yourself.
 
 In any case, this needs to be notified to the Mongock team, so we ensure there are no conflicts with other contributors 
 and the required repository and any other resource are created.
 
 If there is a issue created for this driver, please write a comment asking for it and we'll answer asap. Otherwise, please
-feel free email us to [development@mongock.i](mailto:development@mongock.i)
+feel free email us to [development@mongock.io](mailto:development@mongock.io)
 
 ## Parent project
 ### 2. Create project
 Create a multi-module project called `mongock-driver-DATABASE_NAME`, where `DATABASE_NAME` is the name of the database 
-this driver is targeting, it could mongodb, dymnamod, cassandra, etc.
+this driver is targeting, it could be mongodb, dynamodb, cassandra, etc.
 
 In this example `mongock-driver-simpsonsdb`
 
@@ -104,7 +104,7 @@ Inside the project create a module with te name `DATABASE_NAME-driver`, in this 
 
 ### 7. Implement the ChangeEntryService interface
 This class is the class responsible for managing the change entries in the database. In this SimpsonsDB example we have 
-created a parent class `SimpsonsDBRepositoryase` to hold some common code between the `SimpsonsDBChangeEntryRepository` 
+created a parent class `SimpsonsDBRepositoryBase` to hold some common code between the `SimpsonsDBChangeEntryRepository` 
 and `SimpsonsDBLockRepository`, which will be explained in the next section.
 
 In the class `io.mongock.driver.simpsonsdb.repository.SimpsonsDBChangeEntryRepository` you can see an example and 
@@ -118,7 +118,7 @@ required methods.
 ### 9. Create driver package `io.mongock.driver.DATABASE_NAME.driver`
 
 ### 10. Create Driver class
-This is the actual Drier, the one that is used by the users and Mongock autoconfiguration to generate the driver
+This is the actual Driver, the one that is used by the users and Mongock autoconfiguration to generate the driver
 
 It needs to extend the class `io.mongock.driver.core.driver.NonTransactionalConnectionDriverBase` and provide two static
 builder methods. 
@@ -145,15 +145,15 @@ We highly recommend using testcontainers for this.
 
 
 ## Springboot module
-This module is about providing the required configuration to allow the driver to be used with Mongock autoconfiguration for Springoot.
+This module is about providing the required configuration to allow the driver to be used with Mongock autoconfiguration for Springboot.
 
 ### 12. Create Springboot module
-Inside the project create a module with te name `DATABASE_NAME-springboot-driver`, in this example `simpsonsdb-springoot-driver`
+Inside the project create a module with te name `DATABASE_NAME-springboot-driver`, in this example `simpsonsdb-springboot-driver`
 
 ### 13. Create package `io.mongock.driver.DATABASE_NAME.springboot.config`
 
 ### 14. Configure module's pom
-- Import you recently created driver module. in this example:
+- Import you recently created driver module. In this example:
 ```xml
         <dependency>
             <groupId>io.mongock</groupId>
@@ -188,7 +188,7 @@ Take a look to the class `io.mongock.driver.simpsonsdb.springboot.config.Simpson
 ### 16. Create Context class
 This Springboot context class will be used when Mongock is instructed to be autoconfigured. The context class
 should be very similar to `io.mongock.driver.simpsonsdb.springboot.config.SpringbootSimpsonsDBContext`, it just needs 
-to change teh references to the `SimpsonsDB`.
+to change the references to the `SimpsonsDB`.
 
 Notes:
 - As mentioned in step(14), the configuration class is optional, if not required in this case, it can be removed.
@@ -196,7 +196,7 @@ Notes:
 any custom parameter, this can be removed too.
   
 ### 17. spring.factories
-This file is required for Springoot to know which configuration classes to load. For this the file 
+This file is required for Springboot to know which configuration classes to load. For this the file 
 `src/resources/META-INF/spring.factories` needs to be created with the following content:
 ```properties
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
@@ -204,7 +204,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 ```
 
 ## Driver BOM
-At this point we have built a driver that can be used wit Mongock builder and Mongock Springboot autoconfiguration. As last
+At this point we have built a driver that can be used with Mongock builder and Mongock Springboot autoconfiguration. As last
 step we need to make the life of our users as easy as possible by providing a BOM.
 
 As clarification, Mongock uses a federated BOM architecture, this means that every module(in this case a module it's a driver, runner, framework, etc) 
@@ -226,7 +226,7 @@ After the PR is reviewed and merged, the driver will be released and referenced 
 Then the only missing part it's the documentation
 
 ### 20. Documentation
-This [repository](https://github.com/mongock/mongock-docs)  is the one used Mongock uses for documentation. For this project 
+This [repository](https://github.com/mongock/mongock-docs)  is the one Mongock uses for documentation. For this project 
 and raise a PR in order to add the driver's documentation.
 
 All the drivers are documented under the `driver` section. 
