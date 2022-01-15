@@ -226,7 +226,7 @@ After the PR is reviewed and merged, the driver will be released and referenced 
 Then the only missing part it's the documentation
 
 ### 20. Documentation
-This [repository](https://github.com/mongock/mongock-docs)  is the one Mongock uses for documentation. For this project 
+This [repository](https://github.com/mongock/mongock-docs)  is the one Mongock uses for documentation. Fork this project 
 and raise a PR in order to add the driver's documentation.
 
 All the drivers are documented under the `driver` section. 
