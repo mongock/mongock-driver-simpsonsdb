@@ -14,7 +14,7 @@ In any case, this needs to be notified to the Mongock team, so we ensure there a
 and the required repository and any other resource are created.
 
 If there is a issue created for this driver, please write a comment asking for it and we'll answer asap. Otherwise, please
-feel free email us to [development@mongock.io](mailto:development@mongock.io)
+feel free to email us to [development@mongock.io](mailto:development@mongock.io)
 
 ## Parent project
 ### 2. Create project
